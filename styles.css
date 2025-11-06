@@ -1481,6 +1481,45 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    cursor: help;
+    position: relative;
+    padding: 0.5rem;
+    border-radius: 8px;
+    transition: background-color 0.2s ease;
+}
+
+.stat:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.stat[title]:hover::after {
+    content: attr(title);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 0.5rem 0.75rem;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    white-space: nowrap;
+    z-index: 1000;
+    margin-bottom: 5px;
+}
+
+.stat[title]:hover::before {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid rgba(0, 0, 0, 0.9);
+    margin-bottom: -5px;
 }
 
 .stat-label {
@@ -1491,6 +1530,16 @@ body {
 .stat-value {
     font-weight: 600;
     font-size: 1rem;
+}
+
+.game-info {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 1rem;
+    padding: 0.5rem 0.75rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    border-left: 3px solid #4299e1;
 }
 
 .decision-panel h4 {

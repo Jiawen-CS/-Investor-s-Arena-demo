@@ -338,16 +338,17 @@ window.addEventListener('scroll', throttledScrollHandler);
 
 // Game Demo Functionality
 let currentFunds = 50;
-let portfolioValue = 125;
+let portfolioValue = 0; // Starts at 0, grows with successful investments
 let currentPitchIndex = 0;
 let investmentHistory = []; // Track all investments
 let totalInvestments = 0;
 let successfulInvestments = 0;
 let currentRound = 1;
-let maxRounds = 5;
+let maxRounds = 8; // Increased from 5 to 8 rounds
 let gameEnded = false;
 
-const pitchDatabase = [
+const allCompanies = [
+    // 科技 - AI/机器学习
     {
         entrepreneur: { name: "Sarah Chen", title: "CEO & Founder" },
         company: { 
@@ -363,8 +364,10 @@ const pitchDatabase = [
         successChance: 0.75,
         risk: "Medium - Established partnerships but competitive market"
     },
+    
+    // 医疗健康 - 高监管风险
     {
-        entrepreneur: { name: "Marcus Johnson", title: "Co-Founder & CTO" },
+        entrepreneur: { name: "Dr. Marcus Johnson", title: "Co-Founder & CTO" },
         company: { 
             name: "HealthAI Analytics", 
             tagline: "AI-Powered Medical Diagnostics",
@@ -378,6 +381,8 @@ const pitchDatabase = [
         successChance: 0.60,
         risk: "High - FDA approval uncertain, heavy regulations"
     },
+
+    // 食品科技 - 社会影响
     {
         entrepreneur: { name: "Elena Rodriguez", title: "Founder" },
         company: { 
@@ -393,6 +398,8 @@ const pitchDatabase = [
         successChance: 0.55,
         risk: "High - Low margins, scaling challenges, regulatory hurdles"
     },
+
+    // 金融科技 - 区块链
     {
         entrepreneur: { name: "David Kim", title: "CEO & Founder" },
         company: { 
@@ -407,10 +414,203 @@ const pitchDatabase = [
         market: "$75B",
         successChance: 0.40,
         risk: "Very High - Volatile crypto market, unproven at scale"
+    },
+
+    // 教育科技 - VR/AR
+    {
+        entrepreneur: { name: "Lisa Wang", title: "Founder & CEO" },
+        company: { 
+            name: "EduVR", 
+            tagline: "Virtual Reality Learning Platform",
+            icon: "fas fa-graduation-cap"
+        },
+        pitch: "Our VR platform makes education immersive and engaging. Students can walk through ancient Rome or explore the human heart in 3D. We've partnered with 50+ schools and seen 300% improvement in test scores. Remote learning is the future!",
+        asking: 6,
+        equity: 18,
+        revenue: "$1.5M ARR",
+        market: "$90B",
+        successChance: 0.70,
+        risk: "Medium - Education market adoption can be slow"
+    },
+
+    // 农业科技 - 硬件
+    {
+        entrepreneur: { name: "Ahmed Hassan", title: "Co-Founder & CTO" },
+        company: { 
+            name: "AgroBot", 
+            tagline: "Autonomous Farming Robots",
+            icon: "fas fa-robot"
+        },
+        pitch: "Our autonomous robots can plant, water, and harvest crops 24/7 with 95% efficiency. We reduce labor costs by 80% and increase yields by 40%. Climate change demands smarter farming - we're already deployed on 100+ farms.",
+        asking: 10,
+        equity: 22,
+        revenue: "$900K ARR",
+        market: "$120B",
+        successChance: 0.65,
+        risk: "Medium-High - Hardware challenges, seasonal business"
+    },
+
+    // 心理健康 - B2C SaaS
+    {
+        entrepreneur: { name: "Dr. Priya Patel", title: "CEO & Founder" },
+        company: { 
+            name: "MindWell", 
+            tagline: "AI-Powered Mental Health Support",
+            icon: "fas fa-brain"
+        },
+        pitch: "Our AI therapist provides 24/7 mental health support through chat and video calls. We've helped 100,000+ users reduce anxiety by 60% on average. Mental health is a $240B crisis - we make therapy accessible and affordable.",
+        asking: 4,
+        equity: 16,
+        revenue: "$600K ARR",
+        market: "$240B",
+        successChance: 0.85,
+        risk: "Low-Medium - Growing market, strong user retention"
+    },
+
+    // 航天 - 高风险高回报
+    {
+        entrepreneur: { name: "James Mitchell", title: "Founder" },
+        company: { 
+            name: "SpaceLogistics", 
+            tagline: "Satellite Delivery & Space Manufacturing",
+            icon: "fas fa-rocket"
+        },
+        pitch: "We provide cost-effective satellite deployment and space manufacturing services. Our reusable rockets reduce launch costs by 70%. With 10,000+ satellites needed annually, we're positioned to capture this growing market.",
+        asking: 25,
+        equity: 30,
+        revenue: "$300K ARR",
+        market: "$400B",
+        successChance: 0.35,
+        risk: "Very High - Huge upfront costs, regulatory challenges, unproven technology"
+    },
+
+    // 电商 - 快时尚可持续
+    {
+        entrepreneur: { name: "Sofia Andersson", title: "CEO & Co-Founder" },
+        company: { 
+            name: "ThreadCycle", 
+            tagline: "Sustainable Fast Fashion Alternative",
+            icon: "fas fa-tshirt"
+        },
+        pitch: "We rent designer clothes for 90% less than retail price. Users get fresh outfits monthly while we handle cleaning and logistics. We've signed 50+ designers and have 25K active subscribers. Fast fashion is dying - we're the future.",
+        asking: 7,
+        equity: 20,
+        revenue: "$2.5M ARR",
+        market: "$180B",
+        successChance: 0.68,
+        risk: "Medium - Logistics complexity, changing consumer behavior"
+    },
+
+    // 房地产科技 - PropTech
+    {
+        entrepreneur: { name: "Michael Torres", title: "Founder & CEO" },
+        company: { 
+            name: "InstantBuy", 
+            tagline: "AI-Powered Real Estate Transactions",
+            icon: "fas fa-home"
+        },
+        pitch: "We use AI to buy houses in 24 hours with cash offers. Sellers get instant liquidity, buyers get fair prices. We've flipped 500+ homes with 15% average profit margins. The real estate market is ripe for disruption.",
+        asking: 15,
+        equity: 25,
+        revenue: "$4M ARR",
+        market: "$200B",
+        successChance: 0.45,
+        risk: "High - Market dependent, high capital requirements, regulatory risks"
+    },
+
+    // 物流 - 最后一公里
+    {
+        entrepreneur: { name: "Yuki Tanaka", title: "CTO & Co-Founder" },
+        company: { 
+            name: "DroneRush", 
+            tagline: "Autonomous Delivery Drones",
+            icon: "fas fa-drone"
+        },
+        pitch: "Our delivery drones can transport packages up to 5kg within 30 minutes in urban areas. We've completed 10,000+ successful deliveries and partnered with 3 major retailers. Delivery costs drop by 60% compared to traditional methods.",
+        asking: 9,
+        equity: 18,
+        revenue: "$800K ARR",
+        market: "$100B",
+        successChance: 0.52,
+        risk: "High - Regulatory approval needed, weather dependent, safety concerns"
+    },
+
+    // 娱乐科技 - 游戏/元宇宙
+    {
+        entrepreneur: { name: "Alex Petrov", title: "Creative Director & CEO" },
+        company: { 
+            name: "MetaGaming", 
+            tagline: "Virtual Worlds for Social Gaming",
+            icon: "fas fa-vr-cardboard"
+        },
+        pitch: "We create immersive virtual worlds where players can earn real money through gameplay. Our flagship game has 2M+ users and generated $8M in virtual asset sales. The metaverse gaming market is exploding.",
+        asking: 11,
+        equity: 22,
+        revenue: "$3.2M ARR",
+        market: "$65B",
+        successChance: 0.58,
+        risk: "Medium-High - Competitive market, user acquisition costs, platform dependencies"
+    },
+
+    // 能源 - 储能技术
+    {
+        entrepreneur: { name: "Dr. Rachel Green", title: "CTO & Founder" },
+        company: { 
+            name: "PowerGrid+", 
+            tagline: "Next-Gen Battery Storage Systems",
+            icon: "fas fa-battery-full"
+        },
+        pitch: "Our solid-state batteries last 10x longer and charge 5x faster than lithium-ion. We're already supplying Tesla and have patents for the core technology. The energy storage market is growing 25% annually.",
+        asking: 20,
+        equity: 28,
+        revenue: "$1.8M ARR",
+        market: "$85B",
+        successChance: 0.42,
+        risk: "High - Manufacturing scale challenges, patent litigation risks, tech competition"
+    },
+
+    // 生物技术 - 基因治疗
+    {
+        entrepreneur: { name: "Dr. Benjamin Clark", title: "Chief Science Officer" },
+        company: { 
+            name: "GeneCure", 
+            tagline: "Personalized Gene Therapy Solutions",
+            icon: "fas fa-dna"
+        },
+        pitch: "We develop personalized gene therapies for rare genetic diseases. Our lead therapy shows 80% success rate in trials for muscular dystrophy. We have 3 therapies in clinical trials and partnerships with major pharma companies.",
+        asking: 30,
+        equity: 35,
+        revenue: "$0 (Pre-revenue)",
+        market: "$320B",
+        successChance: 0.25,
+        risk: "Very High - Clinical trial failures, regulatory approval, massive R&D costs"
+    },
+
+    // 零售科技 - 无人商店
+    {
+        entrepreneur: { name: "Jennifer Wu", title: "CEO & Founder" },
+        company: { 
+            name: "SmartCart", 
+            tagline: "Cashier-less Retail Experience",
+            icon: "fas fa-shopping-cart"
+        },
+        pitch: "Our AI-powered stores let customers grab items and walk out - no checkout needed. We use computer vision and IoT sensors for 99.9% accuracy. We have 12 pilot stores running and partnerships with 2 major retail chains.",
+        asking: 8,
+        equity: 20,
+        revenue: "$1.1M ARR",
+        market: "$120B",
+        successChance: 0.63,
+        risk: "Medium - Technology reliability, theft prevention, high setup costs"
     }
 ];
 
+// Game will randomly select 8 companies from this pool for each session
+let pitchDatabase = [];
+
 function openGameDemo() {
+    // Reset game state every time the game is opened
+    initializeGameState();
+    
     const modal = document.getElementById('gameModal');
     modal.classList.add('active');
     document.body.style.overflow = 'hidden';
@@ -429,6 +629,48 @@ function openGameDemo() {
     }
 }
 
+// Function to randomly select 8 companies for this game session
+function generateRandomPitches() {
+    // Shuffle the array and select 8 companies
+    const shuffled = [...allCompanies].sort(() => 0.5 - Math.random());
+    pitchDatabase = shuffled.slice(0, 8);
+    
+    console.log("Selected companies for this session:", pitchDatabase.map(c => c.company.name));
+}
+
+// Function to initialize/reset all game state variables
+function initializeGameState() {
+    currentFunds = 50;
+    portfolioValue = 0; // Start with 0 portfolio value, grows with successful investments
+    currentPitchIndex = 0;
+    investmentHistory = [];
+    totalInvestments = 0;
+    successfulInvestments = 0;
+    currentRound = 1;
+    gameEnded = false;
+    
+    // Generate new random selection of companies
+    generateRandomPitches();
+    
+    // Reset panels
+    const resultPanel = document.getElementById('resultPanel');
+    const decisionPanel = document.querySelector('.decision-panel');
+    
+    if (resultPanel) {
+        resultPanel.style.display = 'none';
+    }
+    if (decisionPanel) {
+        decisionPanel.style.display = 'block';
+    }
+    
+    // Reset next button if it was changed to restart
+    const nextBtn = document.querySelector('.btn-next');
+    if (nextBtn) {
+        nextBtn.textContent = 'Next Pitch';
+        nextBtn.onclick = nextPitch;
+    }
+}
+
 
 
 
@@ -438,7 +680,7 @@ function openGameDemo() {
 function getGamePageScript() {
     return `
         let currentFunds = 50;
-        let portfolioValue = 125;
+        let portfolioValue = 0;
         let currentPitchIndex = 0;
         
         const pitchDatabase = [
@@ -525,6 +767,19 @@ function updateInvestorStats() {
     // Calculate success rate based on actual investment history
     let successRate = totalInvestments > 0 ? Math.round((successfulInvestments / totalInvestments) * 100) : 0;
     document.getElementById('successRate').textContent = `${successRate}%`;
+    
+    // Update round display and progress bar
+    const roundElement = document.getElementById('currentRound');
+    if (roundElement) {
+        roundElement.textContent = `${currentRound}/${maxRounds}`;
+    }
+    
+    // Update progress bar
+    const progressFill = document.getElementById('progressFill');
+    if (progressFill) {
+        const progressPercent = (currentRound / maxRounds) * 100;
+        progressFill.style.width = `${progressPercent}%`;
+    }
     
     // Update investment history display
     updateInvestmentHistoryDisplay();
@@ -636,17 +891,19 @@ function makeInvestment() {
         
         // Record as failed attempt (not counted in success rate)
     } else if (isSuccessful) {
-        // Successful investment - money multiplied
+        // Successful investment - company grows in value
         const returnMultiplier = 2 + Math.random() * 3; // 2x to 5x return
-        const investmentReturn = offerAmount * returnMultiplier;
+        const currentInvestmentValue = offerAmount * returnMultiplier;
         
-        // Add the net profit to portfolio (return minus original investment)
-        const netProfit = investmentReturn - offerAmount;
-        portfolioValue += netProfit;
+        // Add the current value of this investment to portfolio
+        portfolioValue += currentInvestmentValue;
+        
+        // Calculate profit for display
+        const profit = currentInvestmentValue - offerAmount;
         
         resultTitle = `🎉 Investment Successful!`;
-        resultDescription = `Excellent! ${pitch.company.name} accepted your offer and became a huge success. Your investment of $${offerAmount}M grew to $${investmentReturn.toFixed(1)}M over 3 years!`;
-        portfolioImpact = `+$${netProfit.toFixed(1)}M`;
+        resultDescription = `Excellent! ${pitch.company.name} accepted your offer and became a huge success. Your $${offerAmount}M investment is now worth $${currentInvestmentValue.toFixed(1)}M!`;
+        portfolioImpact = `Portfolio +$${currentInvestmentValue.toFixed(1)}M (Profit: +$${profit.toFixed(1)}M)`;
         
         // Record successful investment
         totalInvestments++;
@@ -656,25 +913,26 @@ function makeInvestment() {
             amount: offerAmount,
             equity: Math.round((offerAmount / pitch.asking) * pitch.equity),
             successful: true,
-            return: netProfit
+            return: profit,
+            currentValue: currentInvestmentValue
         });
         
         showFeedback('Successful Investment! 🚀', '#48bb78');
     } else {
-        // Failed investment - money lost
-        const lossPercentage = 0.7 + Math.random() * 0.3; // Lose 70-100% of investment
+        // Failed investment - money lost, no portfolio value change
+        const lossPercentage = 0.8 + Math.random() * 0.2; // Lose 80-100% of investment
         const totalLoss = offerAmount * lossPercentage;
         const remainingValue = offerAmount - totalLoss;
         
         // Return whatever little remains to available funds
         currentFunds += remainingValue;
         
-        // The net loss to portfolio is the total loss
-        portfolioValue -= totalLoss;
+        // Portfolio value doesn't change - failed investments don't add negative value to portfolio
+        // The loss is already reflected in the reduced available funds
         
         resultTitle = `💸 Investment Failed`;
         resultDescription = `${pitch.company.name} accepted your investment but unfortunately the company failed after 18 months. Market competition was fierce and they ran out of cash. You recovered only $${remainingValue.toFixed(1)}M of your $${offerAmount}M investment.`;
-        portfolioImpact = `-$${totalLoss.toFixed(1)}M`;
+        portfolioImpact = `Lost $${totalLoss.toFixed(1)}M from available funds`;
         
         // Record failed investment
         totalInvestments++;
@@ -787,49 +1045,44 @@ function checkGameEnd() {
 }
 
 function showGameOverModal(reason) {
-    let title, message;
+    let title, message, finalReturn = 0;
     
     if (reason === 'bankruptcy') {
         title = '💸 Game Over - Bankruptcy!';
-        message = `You've run out of funds! You made ${totalInvestments} investments with a ${totalInvestments > 0 ? Math.round((successfulInvestments / totalInvestments) * 100) : 0}% success rate.`;
+        message = `You've run out of funds after ${currentRound - 1} rounds! You made ${totalInvestments} investments with a ${totalInvestments > 0 ? Math.round((successfulInvestments / totalInvestments) * 100) : 0}% success rate. Your portfolio is still worth $${portfolioValue.toFixed(1)}M, but you have no cash left to invest.`;
+        finalReturn = portfolioValue - 50; // Net return: current portfolio value minus starting cash
     } else {
         title = '🎉 Game Completed!';
-        const finalReturn = portfolioValue + currentFunds - 175; // Starting was 50 funds + 125 portfolio
-        message = `Congratulations! You completed all ${maxRounds} rounds with $${currentFunds.toFixed(1)}M remaining and a portfolio worth $${portfolioValue.toFixed(1)}M. Total return: $${finalReturn.toFixed(1)}M`;
+        const totalAssets = portfolioValue + currentFunds; // Current portfolio value + remaining cash
+        finalReturn = totalAssets - 50; // Net return compared to starting cash (50M)
+        message = `Congratulations! You completed all ${maxRounds} rounds with $${currentFunds.toFixed(1)}M remaining cash and a portfolio worth $${portfolioValue.toFixed(1)}M. Your total net return is $${finalReturn.toFixed(1)}M - ${finalReturn > 0 ? 'Excellent performance!' : 'Room for improvement next time!'}`;
     }
     
     document.getElementById('resultTitle').textContent = title;
     document.getElementById('resultDescription').textContent = message;
-    document.getElementById('portfolioImpact').textContent = `Final Score: ${Math.max(0, finalReturn || 0).toFixed(1)}M`;
-    document.getElementById('fundsRemaining').textContent = `Game Statistics: ${successfulInvestments}/${totalInvestments} successful investments`;
+    document.getElementById('portfolioImpact').textContent = `Final Score: ${finalReturn >= 0 ? '+' : ''}$${finalReturn.toFixed(1)}M`;
+    document.getElementById('fundsRemaining').textContent = `Investment Statistics: ${successfulInvestments}/${totalInvestments} successful (${totalInvestments > 0 ? Math.round((successfulInvestments / totalInvestments) * 100) : 0}% success rate)`;
     
-    // Hide next button and show restart option
+    // Show restart button with clear styling
     const nextBtn = document.querySelector('.btn-next');
     if (nextBtn) {
-        nextBtn.textContent = 'Restart Game';
+        nextBtn.textContent = '🔄 Play Again';
+        nextBtn.innerHTML = '<i class="fas fa-redo"></i> Play Again';
         nextBtn.onclick = restartGame;
+        nextBtn.style.backgroundColor = '#48bb78';
+        nextBtn.style.color = 'white';
     }
 }
 
 function restartGame() {
-    currentFunds = 50;
-    portfolioValue = 125;
-    currentPitchIndex = 0;
-    investmentHistory = [];
-    totalInvestments = 0;
-    successfulInvestments = 0;
-    currentRound = 1;
-    gameEnded = false;
+    // Use the centralized initialization function
+    initializeGameState();
     
     loadPitch(currentPitchIndex);
     updateInvestorStats();
     
-    // Reset next button
-    const nextBtn = document.querySelector('.btn-next');
-    if (nextBtn) {
-        nextBtn.textContent = 'Next Pitch';
-        nextBtn.onclick = nextPitch;
-    }
+    // Show success message
+    showFeedback('Game Restarted! 🎮', '#4299e1');
 }
 
 function toggleInvestmentHistory() {
