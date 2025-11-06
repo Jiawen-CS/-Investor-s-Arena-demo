@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investor's Arena - Game Concept Demo</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+                    <div class="nav-brand">
+            <i class="fas fa-chart-line"></i>
+            <span>Investor's Arena</span>
+        </div>
+            <ul class="nav-menu">
+                <li><a href="#concept">Concept</a></li>
+                <li><a href="#gameplay">Gameplay</a></li>
+                <li><a href="#mechanics">Mechanics</a></li>
+                <li><a href="#value">Value</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Investor's Arena</h1>
+            <p class="hero-subtitle">A Dragons' Den simulation where you build the ultimate investment portfolio</p>
+            <div class="hero-cta">
+                <button class="btn-primary" onclick="openGameDemo()">
+                    <i class="fas fa-gamepad"></i>
+                    Experience Now
+                </button>
+                <button class="btn-secondary" onclick="scrollToSection('concept')">
+                    <i class="fas fa-info-circle"></i>
+                    Learn More
+                </button>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="investment-card">
+                <div class="card-header">
+                    <i class="fas fa-lightbulb"></i>
+                    <span>TechStart</span>
+                </div>
+                <div class="card-body">
+                    <p class="pitch">Revolutionary AI platform for small businesses</p>
+                    <div class="stats">
+                        <span class="stat">$2M asking</span>
+                        <span class="stat">20% equity</span>
+                    </div>
+                </div>
+                <div class="card-actions">
+                    <button class="btn-invest">Invest</button>
+                    <button class="btn-pass">Pass</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 2: Concept Overview -->
+    <section id="concept" class="slide concept-slide">
+        <div class="slide-content">
+            <div class="slide-header">
+                <span class="slide-number">💡</span>
+                <h2>Concept Overview</h2>
+            </div>
+            
+            <div class="concept-grid">
+                <div class="concept-item">
+                    <div class="concept-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <div class="concept-text">
+                        <h3>Dragons' Den Inspiration</h3>
+                        <p>A simulation game where players take the role of investors evaluating startup pitches.</p>
+                    </div>
+                </div>
+                
+                <div class="concept-item">
+                    <div class="concept-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <div class="concept-text">
+                        <h3>Strategic Decision Making</h3>
+                        <p>Players decide whether to invest or pass — based on pitch quality, financials, and intuition.</p>
+                    </div>
+                </div>
+                
+                <div class="concept-item">
+                    <div class="concept-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="concept-text">
+                        <h3>Ultimate Goal</h3>
+                        <p>Build the most successful investment portfolio and become the top investor!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 3: Core Gameplay -->
+    <section id="gameplay" class="slide gameplay-slide">
+        <div class="slide-content">
+            <div class="slide-header">
+                <span class="slide-number">🎮</span>
+                <h2>Core Gameplay</h2>
+            </div>
+            
+            <div class="gameplay-flow">
+                <div class="gameplay-step">
+                    <div class="step-icon">
+                        <i class="fas fa-presentation"></i>
+                    </div>
+                    <div class="step-content">
+                        <h3>Receive a Business Pitch</h3>
+                        <p>Through video, text, or an animated entrepreneur</p>
+                        <div class="mini-pitch-demo">
+                            <div class="chart-title-small">📊 Company Metrics</div>
+                            <div class="pitch-chart">
+                                <div class="chart-bar" style="height: 36px;">
+                                    <span class="chart-label">Revenue</span>
+                                </div>
+                                <div class="chart-bar" style="height: 48px;">
+                                    <span class="chart-label">Growth</span>
+                                </div>
+                                <div class="chart-bar" style="height: 24px;">
+                                    <span class="chart-label">Risk</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step-arrow">
+                        <i class="fas fa-arrow-down"></i>
+                    </div>
+                </div>
+                
+                <div class="gameplay-step">
+                    <div class="step-icon">
+                        <i class="fas fa-chart-bar"></i>
+                    </div>
+                    <div class="step-content">
+                        <h3>Analyze Key Details</h3>
+                        <p>Including market potential, profit, and innovation</p>
+                        <div class="analysis-demo">
+                            <div class="metrics-grid">
+                                <div class="metric-item">
+                                    <div class="metric-icon">
+                                        <i class="fas fa-dollar-sign"></i>
+                                    </div>
+                                    <span class="metric-text">$2M Revenue</span>
+                                </div>
+                                <div class="metric-item">
+                                    <div class="metric-icon">
+                                        <i class="fas fa-chart-line"></i>
+                                    </div>
+                                    <span class="metric-text">40% Growth</span>
+                                </div>
+                                <div class="metric-item">
+                                    <div class="metric-icon">
+                                        <i class="fas fa-lightbulb"></i>
+                                    </div>
+                                    <span class="metric-text">High Innovation</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step-arrow">
+                        <i class="fas fa-arrow-down"></i>
+                    </div>
+                </div>
+                
+                <div class="gameplay-step">
+                    <div class="step-icon">
+                        <i class="fas fa-comments-dollar"></i>
+                    </div>
+                    <div class="step-content">
+                        <h3>Negotiate or Decide</h3>
+                        <p>Choose whether to invest or decline</p>
+                        <div class="decision-demo">
+                            <div class="decision-buttons">
+                                <div class="demo-btn invest-btn">
+                                    <i class="fas fa-check"></i>
+                                    <span>Invest $5M</span>
+                                </div>
+                                <div class="demo-btn pass-btn">
+                                    <i class="fas fa-times"></i>
+                                    <span>Pass</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="step-arrow">
+                        <i class="fas fa-arrow-down"></i>
+                    </div>
+                </div>
+                
+                <div class="gameplay-step">
+                    <div class="step-icon">
+                        <i class="fas fa-trending-up"></i>
+                    </div>
+                    <div class="step-content">
+                        <h3>See Results</h3>
+                        <p>Track how your investments perform over time</p>
+                        <div class="results-demo">
+                            <div class="chart-title-small">📈 Investment Performance</div>
+                            <div class="performance-chart">
+                                <div class="chart-line">
+                                    <div class="line-point success" style="left: 10%;"></div>
+                                    <div class="line-point neutral" style="left: 30%;"></div>
+                                    <div class="line-point success" style="left: 50%;"></div>
+                                    <div class="line-point failure" style="left: 70%;"></div>
+                                    <div class="line-point success" style="left: 90%;"></div>
+                                    <div class="trend-line"></div>
+                                </div>
+                                <div class="chart-labels">
+                                    <span>Year 1</span>
+                                    <span>Year 2</span>
+                                    <span>Year 3</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 4: Game Mechanics -->
+    <section id="mechanics" class="slide mechanics-slide">
+        <div class="slide-content">
+            <div class="slide-header">
+                <span class="slide-number">⚙️</span>
+                <h2>Game Mechanics</h2>
+            </div>
+            
+            <div class="mechanics-grid">
+                <div class="mechanic-card">
+                    <div class="mechanic-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3>Player Role</h3>
+                    <p>Investor</p>
+                    <div class="role-demo">
+                        <div class="investor-avatar">
+                            <div class="avatar-icon">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <div class="role-stats">
+                                <span class="stat-item">💼 Business Expert</span>
+                                <span class="stat-item">💰 Fund Manager</span>
+                                <span class="stat-item">🎯 Decision Maker</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mechanic-card">
+                    <div class="mechanic-icon">
+                        <i class="fas fa-coins"></i>
+                    </div>
+                    <h3>Currency</h3>
+                    <p>Investment funds (limited capital)</p>
+                    <div class="currency-demo">
+                        <div class="fund-tracker">
+                            <div class="fund-bar">
+                                <div class="fund-used" style="width: 40%;"></div>
+                                <div class="fund-available" style="width: 60%;"></div>
+                            </div>
+                            <div class="fund-labels">
+                                <span class="used-label">Used: $20M</span>
+                                <span class="available-label">Available: $30M</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mechanic-card">
+                    <div class="mechanic-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3>Scoring</h3>
+                    <p>ROI, reputation, and portfolio value</p>
+                    <div class="scoring-demo">
+                        <div class="score-metrics">
+                            <div class="score-circle">
+                                <div class="circle-progress" data-percent="85">
+                                    <span class="score-number">85%</span>
+                                </div>
+                                <span class="score-label">ROI</span>
+                            </div>
+                            <div class="score-circle">
+                                <div class="circle-progress" data-percent="92">
+                                    <span class="score-number">92%</span>
+                                </div>
+                                <span class="score-label">Reputation</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mechanic-card">
+                    <div class="mechanic-icon">
+                        <i class="fas fa-crossroads"></i>
+                    </div>
+                    <h3>Choices Matter</h3>
+                    <p>Every decision affects future opportunities and outcomes</p>
+                    <div class="choice-impact-demo">
+                        <div class="decision-tree">
+                            <div class="decision-node invest">
+                                <i class="fas fa-check"></i>
+                                <span>Invest</span>
+                                <div class="outcome-branches">
+                                    <div class="branch success">+$15M</div>
+                                    <div class="branch failure">-$5M</div>
+                                </div>
+                            </div>
+                            <div class="decision-node pass">
+                                <i class="fas fa-times"></i>
+                                <span>Pass</span>
+                                <div class="outcome-branches">
+                                    <div class="branch missed">Missed $20M</div>
+                                    <div class="branch saved">Saved $5M</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Slide 6: Educational / Entertainment Value -->
+    <section id="value" class="slide value-slide">
+        <div class="slide-content">
+            <div class="slide-header">
+                <span class="slide-number">🧠</span>
+                <h2>Educational & Entertainment Value</h2>
+            </div>
+            
+            <div class="value-benefits">
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="benefit-content">
+                        <h3>Learn Business Concepts</h3>
+                        <p>Learn basic business concepts such as ROI, risk, and market analysis.</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-puzzle-piece"></i>
+                    </div>
+                    <div class="benefit-content">
+                        <h3>Critical Thinking Skills</h3>
+                        <p>Practice critical thinking and decision-making skills.</p>
+                    </div>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <div class="benefit-content">
+                        <h3>High Replayability</h3>
+                        <p>Enjoy replayability through different companies and random pitch outcomes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Game Demo Modal -->
+    <div id="gameModal" class="game-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>🎮 Investor's Arena - Live Demo</h2>
+                <button class="close-btn" onclick="closeGameDemo()">&times;</button>
+            </div>
+            
+            <div class="demo-container">
+                <div class="pitch-section">
+                    <div class="entrepreneur">
+                        <div class="entrepreneur-avatar">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <div class="entrepreneur-info">
+                            <h3 id="entrepreneurName">Sarah Chen</h3>
+                            <p id="entrepreneurTitle">CEO & Founder</p>
+                        </div>
+                    </div>
+                    
+                    <div class="company-card">
+                        <div class="company-header">
+                            <div class="company-logo">
+                                <i id="companyIcon" class="fas fa-rocket"></i>
+                            </div>
+                            <div class="company-info">
+                                <h3 id="companyName">EcoTech Solutions</h3>
+                                <p id="companyTagline">Sustainable Technology for Smart Cities</p>
+                            </div>
+                        </div>
+                        
+                        <div class="pitch-content">
+                            <div class="pitch-text">
+                                <h4>The Pitch:</h4>
+                                <p id="pitchDescription">
+                                    "We've developed revolutionary solar panels that are 40% more efficient than current technology. 
+                                    Our AI-powered energy management system optimizes power distribution in real-time. 
+                                    We're already partnered with 3 major cities and have $2M in pre-orders."
+                                </p>
+                            </div>
+                            
+                            <div class="company-metrics">
+                                <div class="metric">
+                                    <span class="metric-label">Asking For:</span>
+                                    <span class="metric-value" id="askingAmount">$5M</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-label">Equity Offered:</span>
+                                    <span class="metric-value" id="equityOffered">15%</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-label">Current Revenue:</span>
+                                    <span class="metric-value" id="currentRevenue">$2M ARR</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="metric-label">Market Size:</span>
+                                    <span class="metric-value" id="marketSize">$150B</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="investor-panel">
+                    <div class="investor-info">
+                        <h4>Your Investment Portfolio</h4>
+                        <div class="portfolio-stats">
+                            <div class="stat">
+                                <span class="stat-label">Available Funds:</span>
+                                <span class="stat-value" id="availableFunds">$50M</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Portfolio Value:</span>
+                                <span class="stat-value" id="portfolioValue">$125M</span>
+                            </div>
+                            <div class="stat">
+                                <span class="stat-label">Success Rate:</span>
+                                <span class="stat-value" id="successRate">73%</span>
+                            </div>
+                        </div>
+                        <div class="game-progress">
+                            <div class="progress-info">
+                                <span class="progress-label">Round:</span>
+                                <span class="progress-value" id="currentRound">1/5</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="progressFill" style="width: 20%"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="decision-panel">
+                        <h4>Make Your Decision</h4>
+                        <div class="investment-options">
+                            <div class="option-card">
+                                <h5>💰 Make Offer</h5>
+                                <input type="range" id="offerAmount" min="1" max="10" value="5" step="0.5">
+                                <div class="offer-display">
+                                    <span>Offer: $<span id="offerValue">5.0</span>M for <span id="offerEquity">15</span>%</span>
+                                </div>
+                                <button class="btn-invest-demo" onclick="makeInvestment()">
+                                    <i class="fas fa-handshake"></i>
+                                    Make Offer
+                                </button>
+                            </div>
+                            
+                            <div class="option-card">
+                                <h5>🚫 Pass</h5>
+                                <p>Decline this investment opportunity</p>
+                                <button class="btn-pass-demo" onclick="passInvestment()">
+                                    <i class="fas fa-times"></i>
+                                    Pass
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="result-panel" id="resultPanel" style="display: none;">
+                        <div class="result-content">
+                            <h4 id="resultTitle"></h4>
+                            <p id="resultDescription"></p>
+                            <div class="result-impact">
+                                <div class="impact-item">
+                                    <span class="impact-label">Portfolio Impact:</span>
+                                    <span class="impact-value" id="portfolioImpact"></span>
+                                </div>
+                                <div class="impact-item">
+                                    <span class="impact-label">Funds Remaining:</span>
+                                    <span class="impact-value" id="fundsRemaining"></span>
+                                </div>
+                            </div>
+                            <button class="btn-next" onclick="nextPitch()">
+                                <i class="fas fa-forward"></i>
+                                Next Pitch
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Collapsible Investment History -->
+                    <div class="history-section">
+                        <div class="history-header" onclick="toggleInvestmentHistory()">
+                            <h4>📊 Investment History</h4>
+                            <i class="fas fa-chevron-down" id="historyToggle"></i>
+                        </div>
+                        <div class="history-content" id="historyContent">
+                            <div class="investment-history-container">
+                                <table id="investmentHistory" class="investment-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Company</th>
+                                            <th>Amount</th>
+                                            <th>Result</th>
+                                            <th>Return</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td colspan="4" style="text-align: center; color: #666;">No investments yet</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                            <div class="game-status">
+                                <div class="status-item">
+                                    <span class="status-label">Funds Left:</span>
+                                    <span class="status-value" id="fundsLeft">$50M</span>
+                                </div>
+                                <div class="status-item">
+                                    <span class="status-label">Game Status:</span>
+                                    <span class="status-value" id="gameStatus">Round 1/5</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Investor's Arena Game Concept Demo</p>
+            <p>A simulation game inspired by Dragons' Den</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
