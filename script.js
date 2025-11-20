@@ -362,7 +362,13 @@ const allCompanies = [
         revenue: "$2M ARR",
         market: "$150B",
         successChance: 0.75,
-        risk: "Medium - Established partnerships but competitive market"
+        risk: "Medium - Established partnerships but competitive market",
+        hints: {
+            market: "Strong market tailwinds: Government incentives for green energy, growing smart city initiatives, $150B renewable energy market growing 8% annually",
+            team: "Experienced team: Sarah has 15 years at Tesla's energy division, CTO formerly at Google's renewable energy team, strong engineering background",
+            risks: "Competition from established players like Tesla Energy and Sunpower, but differentiated by AI optimization and city partnerships",
+            financials: "Healthy metrics: 40% gross margins, existing revenue validates market demand, pre-orders indicate strong pipeline"
+        }
     },
     
     // 医疗健康 - 高监管风险
@@ -379,7 +385,13 @@ const allCompanies = [
         revenue: "$1.2M ARR",
         market: "$280B",
         successChance: 0.60,
-        risk: "High - FDA approval uncertain, heavy regulations"
+        risk: "High - FDA approval uncertain, heavy regulations",
+        hints: {
+            market: "Huge addressable market: $280B healthcare AI market, aging population driving demand, early cancer detection saves lives and costs",
+            team: "Strong medical credentials: Dr. Johnson has 20+ years in radiology, team includes former FDA advisors, published 50+ research papers",
+            risks: "Major regulatory hurdle: FDA approval timeline uncertain (2-5 years), requires extensive clinical trials, potential liability issues",
+            financials: "Revenue from pilot programs encouraging, but path to profitability depends heavily on regulatory approval success"
+        }
     },
 
     // 食品科技 - 社会影响
@@ -396,7 +408,13 @@ const allCompanies = [
         revenue: "$800K ARR",
         market: "$45B",
         successChance: 0.55,
-        risk: "High - Low margins, scaling challenges, regulatory hurdles"
+        risk: "High - Low margins, scaling challenges, regulatory hurdles",
+        hints: {
+            market: "Niche market with challenges: $45B food waste market exists, but low willingness to pay and fragmented customer base limit growth",
+            team: "Operations experience but profitability concerns: Elena understands logistics, but team lacks experience building profitable low-margin businesses",
+            risks: "Structural challenges: Ultra-thin margins (2-5%), complex multi-stakeholder coordination, regulatory compliance varies drastically by location",
+            financials: "Volume impressive but unit economics concerning: High customer acquisition costs, seasonal demand, path to profitability unclear"
+        }
     },
 
     // 金融科技 - 区块链
@@ -413,7 +431,13 @@ const allCompanies = [
         revenue: "$500K ARR",
         market: "$75B",
         successChance: 0.40,
-        risk: "Very High - Volatile crypto market, unproven at scale"
+        risk: "Very High - Volatile crypto market, unproven at scale",
+        hints: {
+            market: "Volatile market: $75B blockchain security market exists, but crypto winter and regulatory uncertainty create massive headwinds",
+            team: "Technical expertise but limited business experience: Strong cryptography background, but team lacks enterprise sales and regulatory navigation experience",
+            risks: "Multiple major risks: Technology unproven at enterprise scale, regulatory crackdowns possible, crypto market volatility affects enterprise adoption",
+            financials: "Concerning fundamentals: High burn rate, limited revenue runway, massive R&D costs with uncertain ROI timeline"
+        }
     },
 
     // 教育科技 - VR/AR
@@ -430,7 +454,13 @@ const allCompanies = [
         revenue: "$1.5M ARR",
         market: "$90B",
         successChance: 0.70,
-        risk: "Medium - Education market adoption can be slow"
+        risk: "Medium - Education market adoption can be slow",
+        hints: {
+            market: "Post-pandemic opportunity: $90B EdTech market accelerated by remote learning trends, schools investing heavily in digital tools",
+            team: "Well-rounded team: Lisa has education background from Pearson, team includes former Oculus developers, strong curriculum design expertise",
+            risks: "Education sales cycles are long (6-18 months), budget constraints in public schools, technology adoption barriers among educators",
+            financials: "Solid fundamentals: Strong retention rates (95%), growing ARR, reasonable customer acquisition costs for B2B"
+        }
     },
 
     // 农业科技 - 硬件
@@ -447,7 +477,13 @@ const allCompanies = [
         revenue: "$900K ARR",
         market: "$120B",
         successChance: 0.65,
-        risk: "Medium-High - Hardware challenges, seasonal business"
+        risk: "Medium-High - Hardware challenges, seasonal business",
+        hints: {
+            market: "Strong fundamentals: $120B agricultural robotics market, labor shortage driving automation need, climate change increasing precision farming demand",
+            team: "Technical expertise: Ahmed has robotics PhD from MIT, team includes former John Deere engineers, strong hardware development track record",
+            risks: "Hardware business challenges: High upfront development costs, seasonal cash flow, maintenance and support complexity in rural areas",
+            financials: "Encouraging early traction: 100+ farm deployments show market validation, but hardware margins typically lower than software"
+        }
     },
 
     // 心理健康 - B2C SaaS
@@ -464,7 +500,13 @@ const allCompanies = [
         revenue: "$600K ARR",
         market: "$240B",
         successChance: 0.85,
-        risk: "Low-Medium - Growing market, strong user retention"
+        risk: "Low-Medium - Growing market, strong user retention",
+        hints: {
+            market: "Perfect timing: $240B mental health market, pandemic increased demand 300%, insurance coverage expanding, destigmatization trend",
+            team: "Clinical credibility: Dr. Patel is licensed psychologist with Stanford background, team includes AI experts and clinical advisors",
+            risks: "Regulatory considerations: Some states require licensed oversight, data privacy critical, potential competition from big tech",
+            financials: "Strong metrics: High user retention (85%), growing subscription base, proven product-market fit with 100K users"
+        }
     },
 
     // 航天 - 高风险高回报
@@ -481,7 +523,13 @@ const allCompanies = [
         revenue: "$300K ARR",
         market: "$400B",
         successChance: 0.35,
-        risk: "Very High - Huge upfront costs, regulatory challenges, unproven technology"
+        risk: "Very High - Huge upfront costs, regulatory challenges, unproven technology",
+        hints: {
+            market: "Massive market but extreme barriers: $400B space economy looks attractive, but dominated by SpaceX and government contractors with decade-long customer cycles",
+            team: "Technical credentials but execution unknown: James has SpaceX experience, but no track record leading independent space ventures or raising massive capital",
+            risks: "Extreme capital requirements: Needs $500M+ for minimum viable scale, regulatory approval takes years, 90% of space startups fail",
+            financials: "Pre-revenue with massive capital needs: $300K revenue meaningless against billion-dollar development costs, no clear path to profitability"
+        }
     },
 
     // 电商 - 快时尚可持续
@@ -498,7 +546,13 @@ const allCompanies = [
         revenue: "$2.5M ARR",
         market: "$180B",
         successChance: 0.68,
-        risk: "Medium - Logistics complexity, changing consumer behavior"
+        risk: "Medium - Logistics complexity, changing consumer behavior",
+        hints: {
+            market: "Sustainability trend: $180B fashion market shifting toward sustainable options, Gen Z driving circular economy demand",
+            team: "Retail expertise: Sofia has fashion industry background at H&M, operations team from successful logistics companies",
+            risks: "Complex operations: Cleaning, logistics, inventory management challenging to scale, customer behavior still evolving",
+            financials: "Strong traction: $2.5M ARR with 25K subscribers shows market validation, unit economics improving with scale"
+        }
     },
 
     // 房地产科技 - PropTech
@@ -515,7 +569,13 @@ const allCompanies = [
         revenue: "$4M ARR",
         market: "$200B",
         successChance: 0.45,
-        risk: "High - Market dependent, high capital requirements, regulatory risks"
+        risk: "High - Market dependent, high capital requirements, regulatory risks",
+        hints: {
+            market: "Large but cyclical: $200B real estate market, iBuyer trend growing, but highly sensitive to interest rates and economic cycles",
+            team: "Mixed background: Michael has real estate experience, but team lacks deep tech expertise, AI claims may be overstated",
+            risks: "Capital intensive model: Requires massive capital to buy inventory, market downturns could be catastrophic, regulatory scrutiny increasing",
+            financials: "Revenue looks good but margins at risk: $4M ARR impressive, but 15% margins could disappear in market downturn"
+        }
     },
 
     // 物流 - 最后一公里
@@ -532,7 +592,13 @@ const allCompanies = [
         revenue: "$800K ARR",
         market: "$100B",
         successChance: 0.52,
-        risk: "High - Regulatory approval needed, weather dependent, safety concerns"
+        risk: "High - Regulatory approval needed, weather dependent, safety concerns",
+        hints: {
+            market: "Future-focused but uncertain: $100B delivery market, strong demand for faster delivery, but drone regulations still evolving",
+            team: "Strong technical team: Yuki has robotics background from Toyota, team includes former Amazon Prime Air engineers",
+            risks: "Regulatory nightmare: FAA approval slow and complex, weather limitations, safety concerns, public acceptance uncertain",
+            financials: "Early proof of concept: 10K deliveries show technical feasibility, but path to profitability requires massive scale"
+        }
     },
 
     // 娱乐科技 - 游戏/元宇宙
@@ -549,7 +615,13 @@ const allCompanies = [
         revenue: "$3.2M ARR",
         market: "$65B",
         successChance: 0.58,
-        risk: "Medium-High - Competitive market, user acquisition costs, platform dependencies"
+        risk: "Medium-High - Competitive market, user acquisition costs, platform dependencies",
+        hints: {
+            market: "Hype cycle peak: $65B gaming market, metaverse trend cooling from peak hype, but sustainable niche markets emerging",
+            team: "Creative talent: Alex has successful game design background, team from major gaming studios, strong user engagement expertise",
+            risks: "Platform dependency: Success depends on external platforms (Apple, Google), high user acquisition costs, fickle user preferences",
+            financials: "Strong user metrics: $3.2M ARR with 2M users shows good monetization, virtual asset sales provide recurring revenue"
+        }
     },
 
     // 能源 - 储能技术
@@ -566,7 +638,13 @@ const allCompanies = [
         revenue: "$1.8M ARR",
         market: "$85B",
         successChance: 0.42,
-        risk: "High - Manufacturing scale challenges, patent litigation risks, tech competition"
+        risk: "High - Manufacturing scale challenges, patent litigation risks, tech competition",
+        hints: {
+            market: "Critical technology: $85B battery market growing rapidly, driven by EV adoption and grid storage needs, huge strategic importance",
+            team: "Deep technical expertise: Dr. Green has PhD in materials science, team includes former Tesla battery engineers, strong IP portfolio",
+            risks: "Manufacturing hell: Solid-state batteries notoriously difficult to manufacture at scale, capital intensive, major competitors (Samsung, Toyota)",
+            financials: "Promising but unproven: Tesla relationship validates technology, but manufacturing scale-up could require billions in investment"
+        }
     },
 
     // 生物技术 - 基因治疗
@@ -583,7 +661,13 @@ const allCompanies = [
         revenue: "$0 (Pre-revenue)",
         market: "$320B",
         successChance: 0.25,
-        risk: "Very High - Clinical trial failures, regulatory approval, massive R&D costs"
+        risk: "Very High - Clinical trial failures, regulatory approval, massive R&D costs",
+        hints: {
+            market: "Huge market but extremely difficult: $320B biotech market exists, but gene therapy success rate is <10%, most companies fail in clinical trials",
+            team: "World-class science but commercial uncertainty: Brilliant researchers but no proven track record bringing gene therapies to market successfully",
+            risks: "Extreme binary risk: 90% of biotech companies fail in clinical trials, FDA approval can take 15+ years, requires $500M+ investment with no guarantee",
+            financials: "Pure moonshot investment: Zero revenue, will require massive capital injections for years, most similar companies never reach profitability"
+        }
     },
 
     // 零售科技 - 无人商店
@@ -600,7 +684,13 @@ const allCompanies = [
         revenue: "$1.1M ARR",
         market: "$120B",
         successChance: 0.63,
-        risk: "Medium - Technology reliability, theft prevention, high setup costs"
+        risk: "Medium - Technology reliability, theft prevention, high setup costs",
+        hints: {
+            market: "Post-COVID opportunity: $120B retail automation market, labor shortage driving adoption, contactless shopping preferred",
+            team: "Retail-tech hybrid: Jennifer has operations background at Amazon Go, team combines retail expertise with computer vision specialists",
+            risks: "Technology challenges: Computer vision still imperfect, high setup costs per store, customer behavior adaptation needed",
+            financials: "Solid pilot results: $1.1M ARR from 12 stores shows unit economics potential, retail partnerships provide credibility"
+        }
     }
 ];
 
@@ -626,6 +716,15 @@ function openGameDemo() {
         content.classList.add('collapsed');
         header.classList.add('collapsed');
         toggle.className = 'fas fa-chevron-right';
+    }
+    
+    // Initialize hints section as collapsed
+    const hintsContent = document.getElementById('hintsContent');
+    const hintsToggle = document.getElementById('hintsToggle');
+    
+    if (hintsContent && hintsToggle) {
+        hintsContent.classList.add('collapsed');
+        hintsToggle.className = 'fas fa-chevron-down toggle-icon';
     }
 }
 
@@ -751,6 +850,22 @@ function loadPitch(index) {
     document.getElementById('currentRevenue').textContent = pitch.revenue;
     document.getElementById('marketSize').textContent = pitch.market;
     
+    // Update hints content
+    if (pitch.hints) {
+        document.getElementById('marketHint').textContent = pitch.hints.market;
+        document.getElementById('teamHint').textContent = pitch.hints.team;
+        document.getElementById('riskHint').textContent = pitch.hints.risks;
+        document.getElementById('financialHint').textContent = pitch.hints.financials;
+    }
+    
+    // Reset hint panel to collapsed state
+    const hintsContent = document.getElementById('hintsContent');
+    const hintsToggle = document.getElementById('hintsToggle');
+    if (hintsContent && hintsToggle) {
+        hintsContent.classList.add('collapsed');
+        hintsToggle.className = 'fas fa-chevron-down toggle-icon';
+    }
+    
     // Reset offer slider
     document.getElementById('offerAmount').value = pitch.asking;
     updateOfferDisplay();
@@ -761,8 +876,8 @@ function loadPitch(index) {
 }
 
 function updateInvestorStats() {
-    document.getElementById('availableFunds').textContent = `$${currentFunds.toFixed(3)}M`;
-    document.getElementById('portfolioValue').textContent = `$${portfolioValue.toFixed(3)}M`;
+    document.getElementById('availableFunds').textContent = `$${currentFunds.toFixed(2)}M`;
+    document.getElementById('portfolioValue').textContent = `$${portfolioValue.toFixed(2)}M`;
     
     // Calculate success rate based on actual investment history
     let successRate = totalInvestments > 0 ? Math.round((successfulInvestments / totalInvestments) * 100) : 0;
@@ -804,7 +919,7 @@ function updateInvestmentHistoryDisplay() {
             <td>${investment.company}</td>
             <td>$${investment.amount}M</td>
             <td><span class="status ${investment.successful ? 'success' : 'failure'}">${investment.successful ? 'Win' : 'Loss'}</span></td>
-            <td>${investment.successful ? '+' : ''}$${investment.return.toFixed(1)}M</td>
+            <td>${investment.successful ? '+' : ''}$${investment.return.toFixed(2)}M</td>
         `;
         historyTable.appendChild(row);
     });
@@ -882,7 +997,8 @@ function makeInvestment() {
     if (!isOfferAccepted) {
         // Offer rejected - no money lost
         resultTitle = `😔 Investment Declined`;
-        resultDescription = `Unfortunately, ${pitch.entrepreneur.name} felt your offer of $${offerAmount}M for ${Math.round((offerAmount / pitch.asking) * pitch.equity)}% equity was too low and decided to seek other investors.`;
+        const rejectionReason = getFailureReason(pitch, offerAmount, false);
+        resultDescription = `${pitch.entrepreneur.name} declined your offer of $${offerAmount}M for ${Math.round((offerAmount / pitch.asking) * pitch.equity)}% equity. ${rejectionReason}`;
         portfolioImpact = `$0M (No Deal)`;
         
         // Refund the money since no deal was made
@@ -902,8 +1018,8 @@ function makeInvestment() {
         const profit = currentInvestmentValue - offerAmount;
         
         resultTitle = `🎉 Investment Successful!`;
-        resultDescription = `Excellent! ${pitch.company.name} accepted your offer and became a huge success. Your $${offerAmount}M investment is now worth $${currentInvestmentValue.toFixed(1)}M!`;
-        portfolioImpact = `Portfolio +$${currentInvestmentValue.toFixed(1)}M (Profit: +$${profit.toFixed(1)}M)`;
+        resultDescription = `Outstanding decision! ${pitch.company.name} exceeded expectations and delivered a ${returnMultiplier.toFixed(1)}x return on your investment. Your $${offerAmount}M is now worth $${currentInvestmentValue.toFixed(2)}M - a profit of $${profit.toFixed(2)}M!`;
+        portfolioImpact = `+$${currentInvestmentValue.toFixed(2)}M (${(returnMultiplier * 100 - 100).toFixed(0)}% return)`;
         
         // Record successful investment
         totalInvestments++;
@@ -931,8 +1047,9 @@ function makeInvestment() {
         // The loss is already reflected in the reduced available funds
         
         resultTitle = `💸 Investment Failed`;
-        resultDescription = `${pitch.company.name} accepted your investment but unfortunately the company failed after 18 months. Market competition was fierce and they ran out of cash. You recovered only $${remainingValue.toFixed(1)}M of your $${offerAmount}M investment.`;
-        portfolioImpact = `Lost $${totalLoss.toFixed(1)}M from available funds`;
+        const failureReason = getFailureReason(pitch, offerAmount, true);
+        resultDescription = `${pitch.company.name} accepted your $${offerAmount}M investment but unfortunately failed after 18 months. ${failureReason} You recovered only $${remainingValue.toFixed(2)}M from the wreckage.`;
+        portfolioImpact = `Lost $${totalLoss.toFixed(2)}M from available funds`;
         
         // Record failed investment
         totalInvestments++;
@@ -947,11 +1064,38 @@ function makeInvestment() {
         showFeedback('Investment Lost! 📉', '#e53e3e');
     }
     
-    // Update result display
+    // Update result display with enhanced visual effects
     document.getElementById('resultTitle').textContent = resultTitle;
     document.getElementById('resultDescription').textContent = resultDescription;
     document.getElementById('portfolioImpact').textContent = portfolioImpact;
-    document.getElementById('fundsRemaining').textContent = `$${currentFunds.toFixed(3)}M`;
+    document.getElementById('fundsRemaining').textContent = `$${currentFunds.toFixed(2)}M`;
+    
+    // Update result visual effects based on outcome
+    const resultIcon = document.getElementById('resultIcon');
+    const portfolioCard = document.getElementById('portfolioCard');
+    
+    // Remove existing classes
+    portfolioCard.classList.remove('success', 'failure', 'neutral');
+    
+    if (resultTitle.includes('Successful')) {
+        resultIcon.textContent = '🚀';
+        portfolioCard.classList.add('success');
+    } else if (resultTitle.includes('Failed')) {
+        resultIcon.textContent = '💸';
+        portfolioCard.classList.add('failure');
+    } else if (resultTitle.includes('Declined')) {
+        resultIcon.textContent = '😔';
+        portfolioCard.classList.add('neutral');
+    }
+    
+    // Trigger animation reset
+    const resultContent = document.querySelector('.result-content');
+    if (resultContent) {
+        resultContent.style.animation = 'none';
+        requestAnimationFrame(() => {
+            resultContent.style.animation = '';
+        });
+    }
     
     updateInvestorStats();
     
@@ -980,16 +1124,16 @@ function passInvestment() {
         const missedProfit = missedReturn - pitch.asking;
         
         resultTitle = `😬 Major Opportunity Missed!`;
-        resultDescription = `You passed on ${pitch.company.name}, but they secured funding from another investor and became a unicorn! Your potential $${pitch.asking}M investment could have returned $${missedReturn.toFixed(1)}M. Sometimes you have to take calculated risks.`;
-        portfolioImpact = `$0M (Could have been +$${missedProfit.toFixed(1)}M)`;
+        resultDescription = `You passed on ${pitch.company.name}, but they secured funding from another investor and became a unicorn! Your potential $${pitch.asking}M investment could have returned $${missedReturn.toFixed(2)}M. Sometimes you have to take calculated risks.`;
+        portfolioImpact = `$0M (Could have been +$${missedProfit.toFixed(2)}M)`;
         showFeedback('Huge Opportunity Missed! 📈💔', '#f6ad55');
     } else if (wouldHaveBeenAccepted && !wouldHaveSucceeded) {
         // Good decision to pass
         const wouldHaveLost = pitch.asking * (0.7 + Math.random() * 0.3);
         
         resultTitle = `🎯 Excellent Decision!`;
-        resultDescription = `You wisely passed on ${pitch.company.name}. The company secured funding but failed after 2 years due to market challenges. Other investors lost $${wouldHaveLost.toFixed(1)}M of their $${pitch.asking}M investment. Your conservative approach saved you money!`;
-        portfolioImpact = `$0M (Saved $${wouldHaveLost.toFixed(1)}M)`;
+        resultDescription = `You wisely passed on ${pitch.company.name}. The company secured funding but failed after 2 years due to market challenges. Other investors lost $${wouldHaveLost.toFixed(2)}M of their $${pitch.asking}M investment. Your conservative approach saved you money!`;
+        portfolioImpact = `$0M (Saved $${wouldHaveLost.toFixed(2)}M)`;
         showFeedback('Smart Pass! 🧠💰', '#4299e1');
     } else {
         // Neutral outcome - they wouldn't have gotten a deal anyway
@@ -1011,7 +1155,7 @@ function updateGameStatus() {
     const gameStatusEl = document.getElementById('gameStatus');
     
     if (fundsLeftEl) {
-        fundsLeftEl.textContent = `$${currentFunds.toFixed(1)}M`;
+        fundsLeftEl.textContent = `$${currentFunds.toFixed(2)}M`;
     }
     
     if (gameStatusEl) {
@@ -1049,19 +1193,23 @@ function showGameOverModal(reason) {
     
     if (reason === 'bankruptcy') {
         title = '💸 Game Over - Bankruptcy!';
-        message = `You've run out of funds after ${currentRound - 1} rounds! You made ${totalInvestments} investments with a ${totalInvestments > 0 ? Math.round((successfulInvestments / totalInvestments) * 100) : 0}% success rate. Your portfolio is still worth $${portfolioValue.toFixed(1)}M, but you have no cash left to invest.`;
+        message = `You've run out of funds after ${currentRound - 1} rounds! Your portfolio is still worth $${portfolioValue.toFixed(2)}M, but you have no cash left to invest.`;
         finalReturn = portfolioValue - 50; // Net return: current portfolio value minus starting cash
     } else {
         title = '🎉 Game Completed!';
         const totalAssets = portfolioValue + currentFunds; // Current portfolio value + remaining cash
         finalReturn = totalAssets - 50; // Net return compared to starting cash (50M)
-        message = `Congratulations! You completed all ${maxRounds} rounds with $${currentFunds.toFixed(1)}M remaining cash and a portfolio worth $${portfolioValue.toFixed(1)}M. Your total net return is $${finalReturn.toFixed(1)}M - ${finalReturn > 0 ? 'Excellent performance!' : 'Room for improvement next time!'}`;
+        if (finalReturn > 0) {
+            message = `Congratulations! You made $${finalReturn.toFixed(2)}M profit! You have $${currentFunds.toFixed(2)}M cash remaining plus a portfolio worth $${portfolioValue.toFixed(2)}M.`;
+        } else {
+            message = `Game completed! You lost $${Math.abs(finalReturn).toFixed(2)}M overall. You have $${currentFunds.toFixed(2)}M cash remaining and a portfolio worth $${portfolioValue.toFixed(2)}M.`;
+        }
     }
     
     document.getElementById('resultTitle').textContent = title;
     document.getElementById('resultDescription').textContent = message;
-    document.getElementById('portfolioImpact').textContent = `Final Score: ${finalReturn >= 0 ? '+' : ''}$${finalReturn.toFixed(1)}M`;
-    document.getElementById('fundsRemaining').textContent = `Investment Statistics: ${successfulInvestments}/${totalInvestments} successful (${totalInvestments > 0 ? Math.round((successfulInvestments / totalInvestments) * 100) : 0}% success rate)`;
+    document.getElementById('portfolioImpact').textContent = finalReturn >= 0 ? `Profit: +$${finalReturn.toFixed(2)}M` : `Loss: -$${Math.abs(finalReturn).toFixed(2)}M`;
+    document.getElementById('fundsRemaining').textContent = `Funds Remaining: $${currentFunds.toFixed(2)}M`;
     
     // Show restart button with clear styling
     const nextBtn = document.querySelector('.btn-next');
@@ -1134,3 +1282,62 @@ document.addEventListener('keydown', (e) => {
         closeGameDemo();
     }
 });
+
+// Toggle hints panel
+function toggleHints() {
+    const content = document.getElementById('hintsContent');
+    const toggle = document.getElementById('hintsToggle');
+    
+    if (content && toggle) {
+        content.classList.toggle('collapsed');
+        
+        // Update icon
+        if (content.classList.contains('collapsed')) {
+            toggle.className = 'fas fa-chevron-down toggle-icon';
+        } else {
+            toggle.className = 'fas fa-chevron-up toggle-icon';
+        }
+    }
+}
+
+// Enhanced feedback system for failed investments
+function getFailureReason(pitch, offerAmount, isOfferAccepted) {
+    if (!isOfferAccepted) {
+        const offerRatio = offerAmount / pitch.asking;
+        if (offerRatio < 0.8) {
+            return "Your offer was too low - they felt undervalued and sought better terms elsewhere.";
+        } else {
+            return "Despite a fair offer, they preferred a different investor with better strategic value.";
+        }
+    }
+    
+    // Analyze why the investment failed based on company characteristics
+    const successChance = pitch.successChance;
+    const random = Math.random();
+    
+    if (successChance < 0.4) { // Very high risk companies
+        const reasons = [
+            "The technology proved harder to scale than anticipated - execution challenges derailed progress.",
+            "Regulatory hurdles were more complex than expected, delaying market entry significantly.",
+            "The market wasn't ready for this innovation - customer adoption was much slower than projected.",
+            "Competition from well-funded incumbents made market penetration nearly impossible."
+        ];
+        return reasons[Math.floor(random * reasons.length)];
+    } else if (successChance < 0.6) { // High risk companies
+        const reasons = [
+            "While the team was talented, they struggled with the operational challenges of rapid scaling.",
+            "Market conditions shifted unfavorably, making their business model less viable.",
+            "Key partnerships fell through, significantly impacting their growth trajectory.",
+            "They burned through capital too quickly trying to achieve growth, leading to financial difficulties."
+        ];
+        return reasons[Math.floor(random * reasons.length)];
+    } else { // Medium-low risk companies that still failed
+        const reasons = [
+            "Despite strong fundamentals, unexpected competitive pressure eroded their market position.",
+            "Management made strategic missteps that you should have spotted during due diligence.",
+            "Economic headwinds affected their market segment more than anticipated.",
+            "Internal team conflicts and leadership changes disrupted their execution."
+        ];
+        return reasons[Math.floor(random * reasons.length)];
+    }
+}
